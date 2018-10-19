@@ -3,7 +3,7 @@ package es.ujaen.tfg.modelos;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
-
+//asignatmos tabla
 @Entity
 
 public class Categoria implements Serializable {

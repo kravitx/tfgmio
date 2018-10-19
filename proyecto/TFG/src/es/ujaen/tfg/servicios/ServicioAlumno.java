@@ -21,8 +21,8 @@ public class ServicioAlumno {
 		@Autowired
 	    private AlumnoDAO alumnoDAO;
 	    
-	    @Autowired
-	    private CursoDAO cursoDAO;
+	  //  @Autowired
+	  //  private CursoDAO cursoDAO;
 	    
 	    @Autowired
 	    private MatriculaDAO matriculaDAO;
@@ -32,12 +32,5 @@ public class ServicioAlumno {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public List<Alumno> buscarAlumnosPorCurso(Curso curso){
-        return usuarioDAO.buscar(id);
-    }
-	
-	 public void altaAlumno(Alumno alumno){
-	        alumnoDAO.insertar(alumno);
-	    }
 
 }
