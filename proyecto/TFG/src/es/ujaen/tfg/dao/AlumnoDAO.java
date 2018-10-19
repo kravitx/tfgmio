@@ -42,7 +42,7 @@ public class AlumnoDAO {
 	
     /**
     *
-    * @param alumno
+    * @param alumnno
     * @throws AlumnoErrorInsertar
     */
 @Transactional(propagation = Propagation.REQUIRED, readOnly = false,
