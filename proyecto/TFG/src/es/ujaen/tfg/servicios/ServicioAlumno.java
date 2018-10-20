@@ -18,6 +18,7 @@ import es.ujaen.tfg.modelos.Usuario;
 
 public class ServicioAlumno {
 	 	
+	private int a;
 		@Autowired
 	    private AlumnoDAO alumnoDAO;
 	    
