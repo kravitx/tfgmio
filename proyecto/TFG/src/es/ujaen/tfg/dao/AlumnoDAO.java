@@ -26,7 +26,8 @@ import es.ujaen.tfg.modelos.Matricula;
 @Component
 public class AlumnoDAO {
 	
-	private int borrame;
+	private int a;
+	private int b;
 	 @PersistenceContext
 	    private EntityManager em;
 
