@@ -1,6 +1,6 @@
 # ignore the bin and doc directories
 bin/
-doc/
+doc/*
 **/target/**
 **/build/**
 
