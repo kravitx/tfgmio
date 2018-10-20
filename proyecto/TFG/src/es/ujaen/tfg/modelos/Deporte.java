@@ -18,7 +18,7 @@ public class Deporte implements Serializable {
     private int idDeporte;
     @NotEmpty @Size(min = 3, max = 20)
     private String nombre;
-    @NotEmpty @Size(min = 3, max = 15)
+    @NotEmpty @Size(min = 3, max = 55)
     private String denominacionParticipante;
     @NotEmpty @Size(min = 3, max = 15)
     private String denominacionEvento;
