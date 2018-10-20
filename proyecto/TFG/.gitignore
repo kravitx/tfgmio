@@ -1,8 +1,8 @@
 # ignore the bin and doc directories
 bin/
 doc/
-target/
-build/
+**/target/**
+**/build/**
 
 # ignore class files and html files
 *.class
