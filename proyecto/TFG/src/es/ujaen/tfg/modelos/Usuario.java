@@ -16,6 +16,10 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Table(name = "usuarios", uniqueConstraints={@UniqueConstraint(columnNames={"usuario"})})
 public class Usuario implements Serializable{
     
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int idUsuario;

@@ -1,20 +1,48 @@
 package es.ujaen.tfg.modelos;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+@Entity
+@Table(name = "matriculas", uniqueConstraints={@UniqueConstraint(columnNames = {"codigoCurso", "codigoAlumno"})})
 public class Matricula implements Serializable {
-	
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 3202039906307244345L;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long codigoMatricula;
+	
+	@ManyToOne (fetch = FetchType.EAGER)
+	 @JoinColumn(name="codigoCurso")
+
 	private Curso codigoCurso;
+	
+	@ManyToOne (fetch = FetchType.EAGER)
+	 @JoinColumn(name="CodigoAlumno")
+
 	private Alumno codigoAlumno;
+	
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaMatricula;
+	
 	private String provinciaMatricula;
-	private Usuario autorMatricula;
+	
+	@ManyToOne (fetch = FetchType.EAGER)
+	private Usuario registradorMatricula;
 	
 
 	public Matricula(Long codigoMatricula, Curso codigoCurso, Alumno codigoAlumno, Date fechaMatricula,
@@ -25,7 +53,7 @@ public class Matricula implements Serializable {
 		this.codigoAlumno = codigoAlumno;
 		this.fechaMatricula = fechaMatricula;
 		this.provinciaMatricula = provinciaMatricula;
-		this.autorMatricula = autorMatricula;
+		this.registradorMatricula = autorMatricula;
 	}
 	public Curso getCodigoCurso() {
 		return codigoCurso;
@@ -52,10 +80,10 @@ public class Matricula implements Serializable {
 		this.provinciaMatricula = provinciaMatricula;
 	}
 	public Usuario getAutorMatricula() {
-		return autorMatricula;
+		return registradorMatricula;
 	}
 	public void setAutorMatricula(Usuario autorMatricula) {
-		this.autorMatricula = autorMatricula;
+		this.registradorMatricula = autorMatricula;
 	}
 	public Long getCodigoMatricula() {
 		return codigoMatricula;

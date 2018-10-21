@@ -1,8 +1,19 @@
 package es.ujaen.tfg.modelos;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+@Entity
+@Table(name = "titulos")
 public class Titulo implements Serializable {
 	
 	
@@ -10,23 +21,29 @@ public class Titulo implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 9025180753713032746L;
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idTitulo;
 	
 	private String numeroTitulo; 
-	
+	 @OneToOne(fetch=FetchType.EAGER)
+
 	private Curso cursoT;
-	
+	 @OneToOne(fetch=FetchType.EAGER)
+
 	private Alumno alumnoT;
 	
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaExpedicionT;
 	
+	@OneToOne(fetch=FetchType.EAGER)
 	private Usuario registradorT;
 	
 	private String textoTitulo;
 	
 	private boolean tituloRecogido;
 	
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaRecogidaT;
 	
 	private String personaRecogidaT;
