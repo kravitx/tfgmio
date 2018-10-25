@@ -1,6 +1,7 @@
 package es.ujaen.tfg.dao;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -86,5 +87,15 @@ rollbackFor = es.ujaen.tfg.excepciones.AlumnoErrorInsertar.class)
        } catch (Exception e) {
            throw new AlumnoErrorEliminar();
        }
+   }
+   
+   public List<Alumno> listadoAlumnos() { //Devuelve los alumnos del sistema
+       List<Alumno> alumnos = new ArrayList();
+       List<Alumno> lista = em.createQuery("Select u from Alumnos u").getResultList();
+
+       for (Alumno alumno : lista) {
+           alumnos.add(alumno);
+       }
+       return Collections.unmodifiableList(alumnos);
    }
 }

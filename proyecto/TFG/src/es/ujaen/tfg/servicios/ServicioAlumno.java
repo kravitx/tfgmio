@@ -33,5 +33,10 @@ public class ServicioAlumno {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public List<Alumno> getAlumnos() {
+	    return alumnoDAO.listadoAlumnos();
+	}
+	
 
 }
